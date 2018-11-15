@@ -20,11 +20,6 @@ public class QuadraticRoots {
         return root2;
     }
 
-
-    public QuadraticEquation getQuadEquation() {
-
-    }
-
     public String toString() {
         double a = root1.getRealMagnitude();
         double b = root1.getImaginaryMagnitude();

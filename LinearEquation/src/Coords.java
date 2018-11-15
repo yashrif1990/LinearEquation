@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Coords {
     //instance variables
     private double x, y;
@@ -90,5 +92,25 @@ public class Coords {
 
     public boolean slopeOfLIneSegmentDefined( Coords other ) {
         return other.x != - this.x;
+    }
+
+    public static Coords closestPointToOrigin( ArrayList<Coords> points ) {
+        Coords closestPoint = points.get( 0 );
+        for ( Coords somePoint : points ) {
+            if ( somePoint.distanceFromOrigin() < closestPoint.distanceFromOrigin() ) {
+                closestPoint = somePoint;
+            }
+        }
+        return closestPoint;
+    }
+
+    public Coords closestPoint( ArrayList<Coords> points ) {
+        Coords closestPoint = points.get( 0 );
+        for ( Coords somePoint : points ) {
+            if ( this.distanceFrom( somePoint ) < this.distanceFrom( closestPoint ) ) {
+                closestPoint = somePoint;
+            }
+        }
+        return closestPoint;
     }
 }
