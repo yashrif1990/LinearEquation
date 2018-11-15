@@ -30,6 +30,12 @@ public class Coords {
     }
 
     public String toString() {
+        if ( this.x == 0 && this.y == 0 )
+            return "(0,0)";
+        if ( this.x == 0 && this.y != 0 )
+            return "(0, " + this.y + ")";
+        if ( this.x != 0 && this.y == 0 )
+            return "(" + this.x + ", 0)";
         return "(" + this.x + ", " + this.y + ")";
     }
 
